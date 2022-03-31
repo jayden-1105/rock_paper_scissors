@@ -19,39 +19,45 @@ function playRound(playerSelection, computerSelection) {
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "rock" && computerSelection == 'paper') {
+    else if (playerSelection == "rock" && computerSelection == 'paper') {
         console.log("Computer wins. Paper beats rock.");
         computerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "rock" && computerSelection == "scissor") {
+    else if (playerSelection == "rock" && computerSelection == "scissor") {
         console.log("You win. Rock beats scissor.");
         playerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "paper" && computerSelection == "scissor") {
+    else if (playerSelection == "paper" && computerSelection == "scissor") {
         console.log("Computer wins. Scissor beats paper.");
         computerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "paper" && computerSelection == "rock") {
+    else if (playerSelection == "paper" && computerSelection == "rock") {
         console.log("You win. Paper beats rock.");
         playerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "scissor" && computerSelection == "rock") {
+    else if (playerSelection == "scissor" && computerSelection == "rock") {
         console.log("Computer wins. Rock beats scissor.");
         computerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
-    if (playerSelection == "scissor" && computerSelection == "paper") {
+    else if (playerSelection == "scissor" && computerSelection == "paper") {
         console.log("You win. Scissor beats paper.");
         playerWins += 1;
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Computer wins: ${computerWins}`);
+    }
+    else {
+        console.log("You did not choose a valid option. You lose");
+        computerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
@@ -68,3 +74,13 @@ function game() {
 }
 
 game();
+
+if (computerWins === playerWins) {
+    console.log("it's a draw");
+}
+else if (computerWins > playerWins) {
+    console.log("computer wins");
+}
+else {
+    console.log("you win");
+}
