@@ -9,6 +9,9 @@ let playerWins = 0;
 let computerWins = 0;
 
 function playRound(playerSelection, computerSelection) {
+    gameResult.style.color = "blue";
+    gameResult.style.fontSize = "24px";
+
     if (playerSelection === computerSelection) {
         gameResult.textContent = "It's a tie!";
     }
@@ -39,6 +42,10 @@ function playRound(playerSelection, computerSelection) {
     playerScore.textContent = `Player score: ${playerWins}`;
     computerScore.textContent = `Computer score: ${computerWins}`;
     checkScore(computerWins, playerWins);
+    if (checkScore(computerWins, playerWins)) {
+        playerWins = 0;
+        computerWins = 0;
+    }
 }
 
 const rock = document.querySelector('.rock');
@@ -66,10 +73,14 @@ const gameResult = document.querySelector('.result');
 function checkScore(computerScore, playerScore) {
     if (playerScore >= 5) {
         gameResult.style.color = "red";
+        gameResult.style.fontSize = "40px";
         gameResult.textContent = "You won! Computers still haven't taken over yet.";
+        return true;
     }
     if (computerScore >= 5) {
         gameResult.style.color = "red";
+        gameResult.style.fontSize = "40px";
         gameResult.textContent = "Computer won. The human species has been surpassed.";
+        return true;
     }
 }
