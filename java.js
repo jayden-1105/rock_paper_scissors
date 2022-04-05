@@ -15,12 +15,14 @@ function playRound(playerSelection, computerSelection) {
         console.log("It's a tie!");
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
+        //scoreboard.textContent = `Player wins: ${playerWins}, Computer wins: ${computerWins}`);
     }
     if (playerSelection == "rock" && computerSelection == 'paper') {
         console.log("Computer wins. Paper beats rock.");
         computerWins += 1;
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
+        
     }
     if (playerSelection == "rock" && computerSelection == "scissor") {
         console.log("You win. Rock beats scissor.");
@@ -52,6 +54,7 @@ function playRound(playerSelection, computerSelection) {
         console.log(`Player wins: ${playerWins}`);
         console.log(`Computer wins: ${computerWins}`);
     }
+    scoreboard.textContent = `Player wins: ${playerWins} \nComputer wins: ${computerWins}`;
 }
 
 const rock = document.querySelector('.rock');
@@ -72,4 +75,5 @@ scissor.addEventListener('click', function() {
     computerSelection = computerPlay();
 });
 
-const scoreboard = document.createElement("p");
+const scoreboard = document.querySelector('.scoreboard');
+const gameResult = document.querySelector('.result');
